@@ -2,3 +2,6 @@ requests
 pytest
 voluptuous
 pytest-voluptuous
+allure-pytest
+curlify
+selene==2.0.0rc2
