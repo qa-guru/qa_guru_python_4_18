@@ -24,11 +24,11 @@ def test_get_users_users_on_page(reqres):
     assert data_len == per_page == 6
 
 
-def test_get_users_validate_schema():
+def test_get_users_validate_schema(reqres):
     """Валидируем схему ответа. Передаем query-params в requests правильно."""
-    url = "https://reqres.in/api/users"
+    url = "/users"
 
-    response: Response = requests.get(url, params={"page": 2})
+    response: Response = reqres.get(url, params={"page": 2})
 
     assert S(list_users_schema) == response.json()
 
